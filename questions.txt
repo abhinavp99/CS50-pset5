@@ -1,0 +1,34 @@
+0. Pneumonoultramicroscopicsilicovolcanoconiosis is the longest word in the Oxford dictionary. It was specifically made to be the longest word.
+Pneumonoultramicroscopicsilicovolcanoconiosis is a lung disease caused by inhaling fine dust or ash. Also know as silicosis.
+1.  getrusage's primary aim is to determine resource usage for various
+processes and threads.
+2.  Struct rusage has 16 members, two of which are structs and 14 of which
+are longs.
+3.  This is similar in philosophy to the swap function. By passing the reference there is no need to
+generate a copy of the relatively large structs, hence saving time and memory.
+4.  The for loop uses the fgetc function. The function retrieves the next character from a file,
+in this case the dictionary. The loop then checks each character. It ensures each word is no longer 
+than LENGTH. It then proceeds to add each character to a new character array in order to collect all
+the letters. If during the process the word exceeds LENGTH or a alpanumeric character is detected
+then loop proceeds to "use up the word". This ends up moving the file pointer to the next word. If
+the character is neither a letter, apostrophe, or digit, then it must indicate a space, which means
+the whole word is found. The loop then spell checks this word, which is stored in the character array.
+Once this is done, it "resets" the array, and loop continues again, stopping only when the end of
+the file (EOF) is reached. 
+5.  This makes the loop more simply and easier. If fscanf is used, then the whole string is scanned.
+While this seems easy, it cannot check for strings that pass the LENGTH or string containing 
+alphanumeric character. While the strings could be checked via a for loop, this is a waste of time
+and resources as it essentially does the same thing as the loop given in the program.
+6.  A const variable can not be changed. Hence the functions can only "read" the given variables
+without writing them. This prevents us from accidentally changing our word, or much worse, the
+dictionary, while typing out our program, which could be distarous and irreversible.
+7.  I used the trie method do this task. I declared a struct node which contained a boolean called
+complete and an array of 27 node*. The the array stood for each of the 26 letters and apostrophe.
+The bool marked whether a word was complete or not. 
+8. The code was very close to the staff solution when it was finally implemented. However, before I 
+got all the functions, the load was very slow, due to a misplaced pointer.
+9. I didn't really make any changes. However, due to the restrictions on the declarations of the
+functions I had to rework a couple of the problems which became an issue.
+10. I don't feel my code has any visible bottlenecks. However there are 46 bytes of memory not being
+freed. I can't locate it. To be safe, I cross checked my code, especially unload, with another dictionary
+but I could not find any error.
